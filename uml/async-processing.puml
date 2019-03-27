@@ -1,0 +1,20 @@
+@startuml
+
+title "Async processing"
+
+participant "external producer" as ep
+participant "message broker" as mb
+participant "message consumer" as mc
+participant Service as s
+participant Repository as r
+participant DB as db
+
+ep ->> mb: produce message
+mc ->> mb: consume message
+mc ->> s: send data to service method
+s -> r: call repository method
+r -> db: execute query
+db -> r: receive data, map to classes
+r -> s: return business object
+
+@enduml

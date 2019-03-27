@@ -41,27 +41,56 @@ monetary transactions.
 <summary></summary>
 rest_api_mark
 @startuml;
-    actor User;
-    participant "First Class" as A;
-    participant "Second Class" as B;
-    participant "Last Class" as C;
-    User -> A: DoWork;
-    activate A;
-    A -> B: Create Request;
-    activate B;
-    B -> C: DoWork;
-    activate C;
-    C -> B: WorkDone;
-    destroy C;
-    B -> A: Request Created;
-    deactivate B;
-    A -> User: Done;
-    deactivate A;
+
+title "Rest API";
+
+actor Client as u;
+participant Controller as c;
+participant Service as s;
+participant Repository as r;
+participant DB as db;
+
+u -> c: HTTP request;
+c -> s: send data to service method;
+s -> r: call repository method;
+r -> db: execute query;
+db -> r: receive data, map to classes;
+r -> s: return business object;
+s -> c: return data;
+c -> u: http response;
 @enduml
 rest_api_mark
 </details>
 
 ### Asynchronous processing
+
+![Alt text](https://g.gravizo.com/source/async_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
+
+<details> 
+<summary></summary>
+async_mark
+@startuml;
+
+title "Async processing";
+
+participant "external producer" as ep;
+participant "message broker" as mb;
+participant "message consumer" as mc;
+participant Service as s;
+participant Repository as r;
+participant DB as db;
+
+ep ->> mb: produce message;
+mc ->> mb: consume message;
+mc ->> s: send data to service method;
+s -> r: call repository method;
+r -> db: execute query;
+db -> r: receive data, map to classes;
+r -> s: return business object;
+
+@enduml
+async_mark
+</details>
 
 ## Technical requirements
 
