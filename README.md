@@ -43,4 +43,6 @@ monetary transactions.
 * Multi-module approach with [clean architecture](https://medium.freecodecamp.org/a-quick-introduction-to-clean-architecture-990c014448d2)
 * Generated API documentation
 * Automated DB migrations ([Liquibase](https://www.liquibase.org/) or [Flyway](https://flywaydb.org/))
+* Security layer with basic auth
+* Security layer with JWT
 * Building runnable fat-jar
