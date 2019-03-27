@@ -36,7 +36,7 @@ monetary transactions.
 
 ### Rest API
 
-![rest-api](https://g.gravizo.com/svg?
+![rest-api](https://g.gravizo.com/svg#
 @startuml;
 Command -> Entity: ask to do something;
 Entity -> Entity: validates, creates events\n(not stored yet);
