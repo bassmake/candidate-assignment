@@ -36,6 +36,7 @@ monetary transactions.
 
 ### Rest API
 
+```
 ![Alt text](https://g.gravizo.com/svg?
 @startuml;
 actor User;
@@ -55,6 +56,7 @@ deactivate B;
 A -> User: Done;
 deactivate A;
 @enduml)
+```
 
 ### Asynchronous processing
 
