@@ -36,7 +36,7 @@ monetary transactions.
 
 ### Rest API
 
-<img src='https://g.gravizo.com/svg?
+![rest-api](https://g.gravizo.com/svg?
 @startuml;
 Command -> Entity: ask to do something;
 Entity -> Entity: validates, creates events\n(not stored yet);
@@ -45,7 +45,7 @@ Entity -> Command: response;
 Entity -> Journal: ask for not applied events;
 Entity -> Entity: events are applied and state is changed;
 @enduml;
-'>
+)
 
 ### Asynchronous processing
 
