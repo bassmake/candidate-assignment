@@ -52,10 +52,10 @@ monetary transactions.
 
 ### Rest API
 
-![Alt text](https://g.gravizo.com/source/rest_api_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
+![Alt text](https://g.gravizo.com/source/rest_api_mark_1?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
 <details> 
 <summary></summary>
-rest_api_mark
+rest_api_mark_1
 
 @startuml;
 
@@ -78,7 +78,7 @@ c -> u: HTTP response;
 
 @enduml
 
-rest_api_mark
+rest_api_mark_1
 </details>
 
 ### Asynchronous processing
