@@ -86,24 +86,24 @@ rest_api_mark
 <details> 
 <summary></summary>
 async_mark
-@startuml;
+@startuml
 
-title Async processing;
+title Async processing
 
-actor "external producer" as ep;
-participant "message broker" as mb;
-participant "message consumer" as mc;
-participant Service as s;
-participant Repository as r;
-database DB as db;
+actor "external producer" as ep
+participant "message broker" as mb
+participant "message consumer" as mc
+participant Service as s
+participant Repository as r
+database DB as db
 
-ep ->> mb: produce message;
-mc ->> mb: consume message;
-mc ->> s: send data to service method;
-s -> r: call repository method;
-r -> db: execute query;
-db -> r: receive data, map to classes;
-r -> s: return business object;
+ep ->> mb: produce message
+mc ->> mb: consume message
+mc ->> s: send data to service method
+s -> r: call repository method
+r -> db: execute query
+db -> r: receive data, map to classes
+r -> s: return business object
 
 @enduml
 async_mark
