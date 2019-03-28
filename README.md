@@ -56,26 +56,29 @@ monetary transactions.
 <details> 
 <summary></summary>
 rest_api_mark
-@startuml;
 
-title Rest API;
+```
+@startuml
 
-actor Client as u;
-participant Controller as c;
-participant Service as s;
-participant Repository as r;
-database DB as db;
+title Rest API
 
-u -> c: HTTP request;
-c -> s: send data to service method;
-s -> r: call repository method;
-r -> db: execute query;
-db -> r: receive data, map to classes;
-r -> s: return business object;
-s -> c: return data;
-c -> u: HTTP response;
+actor Client as u
+participant Controller as c
+participant Service as s
+participant Repository as r
+database DB as db
+
+u -> c: HTTP request
+c -> s: send data to service method
+s -> r: call repository method
+r -> db: execute query
+db -> r: receive data, map to classes
+r -> s: return business object
+s -> c: return data
+c -> u: HTTP response
 
 @enduml
+```
 rest_api_mark
 </details>
 
