@@ -52,63 +52,8 @@ monetary transactions.
 
 ### Rest API
 
-![Alt text](https://g.gravizo.com/source/rest_api_mark_1?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
-<details> 
-<summary></summary>
-rest_api_mark_1
-
-@startuml;
-
-title Rest API;
-
-actor Client as u;
-participant Controller as c;
-participant Service as s;
-participant Repository as r;
-database DB as db;
-
-u -> c: HTTP request;
-c -> s: send data to service method;
-s -> r: call repository method;
-r -> db: execute query;
-db -> r: receive data, map to classes;
-r -> s: return business object;
-s -> c: return data;
-c -> u: HTTP response;
-
-@enduml
-
-rest_api_mark_1
-</details>
+![rest](https://www.plantuml.com/plantuml/svg/LP1BJWCn38RtFeKF01UO1Iej2zXLRI-GE9O8oYI3xLJqzesPQgGku-z_sDcf1R4-5m3BLXXFh8Rlno-0GDO43oLpDGoA7POXpPINC0Q7LarQAIpEw8cTMQwPs84-WHClJVE8lJaJIC523ChuiVT1YW0TNz-G9loyN8ue_Dl7Fa0-r0cLQq8teRNnM5jcjk-MG5qZ4r8ePHYteWSMnobEo7zCtHX7ijmWnOTDc3XV-J_z1UUmU0MLeCgwcjL5rgLYx9ehgsABFqosLjE6FM9TkMztwDAgCi1kN31--mu0)
 
 ### Asynchronous processing
 
-![Alt text](https://g.gravizo.com/source/async_mark_1?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
-
-<details>
-<summary></summary>
-async_mark_1
-
-@startuml;
-
-title Async processing;
-
-actor "external producer" as ep;
-participant "message broker" as mb;
-participant "message consumer" as mc;
-participant Service as s;
-participant Repository as r;
-database DB as db;
-
-ep ->> mb: produce message;
-mc ->> mb: consume message;
-mc ->> s: send data to service method;
-s -> r: call repository method;
-r -> db: execute query;
-db -> r: receive data, map to classes;
-r -> s: return business object;
-
-@enduml
-
-async_mark_1
-</details>
+![async](https://www.plantuml.com/plantuml/svg/NP5DJaCn38JtFeNLDLoWYweWJW0dI1oh15v-i9sglNqT-afLbiatdXdPUxKWDie2ODaMnXSzLy8kZLWrrmD086k26puPImtBP6aGomQ38dVu6JmODyNruS0OfNsli4Jexfufzr3jBg5MTPIRY1v47op7J3o9Fe1txaspLpbF9f22XHYKyUrrVgG8m1sVTpkFtTvAuXe9XVxGcluVwHQLQyBfYzRySIrIs3vR0dKHYa-7PK6vTrcnJ9pSdKzCmnXzAtA65DSnOU9yv5_t9ooXpmXQWYhhTLYdo8PKZCCNx-MmnIyc0zXxBp_H1G00)
