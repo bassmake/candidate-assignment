@@ -32,7 +32,23 @@ monetary transactions.
   * Message broker: Kafka or ActiveMQ
   * Persistence: Jooq or JPA
 
-## Architecture
+## Technical requirements
+
+* reasonable logging via SLF4J (used implementation is not important) 
+* Unit tests
+* Integration tests - this means that whole application is running including in-memory DB
+
+### Bonus points
+
+* Domain Driven Design applied
+* Multi-module approach with [clean architecture](https://medium.freecodecamp.org/a-quick-introduction-to-clean-architecture-990c014448d2)
+* Generated API documentation
+* Automated DB migrations ([Liquibase](https://www.liquibase.org/) or [Flyway](https://flywaydb.org/))
+* Security layer with basic auth
+* Security layer with JWT
+* Building runnable fat-jar
+
+## Hints for standard three layered approach
 
 ### Rest API
 
@@ -42,13 +58,13 @@ monetary transactions.
 rest_api_mark
 @startuml;
 
-title "Rest API";
+title Rest API;
 
 actor Client as u;
 participant Controller as c;
 participant Service as s;
 participant Repository as r;
-participant DB as db;
+database DB as db;
 
 u -> c: HTTP request;
 c -> s: send data to service method;
@@ -57,7 +73,8 @@ r -> db: execute query;
 db -> r: receive data, map to classes;
 r -> s: return business object;
 s -> c: return data;
-c -> u: http response;
+c -> u: HTTP response;
+
 @enduml
 rest_api_mark
 </details>
@@ -71,14 +88,14 @@ rest_api_mark
 async_mark
 @startuml;
 
-title "Async processing";
+title Async processing;
 
-participant "external producer" as ep;
+actor "external producer" as ep;
 participant "message broker" as mb;
 participant "message consumer" as mc;
 participant Service as s;
 participant Repository as r;
-participant DB as db;
+database DB as db;
 
 ep ->> mb: produce message;
 mc ->> mb: consume message;
@@ -91,18 +108,3 @@ r -> s: return business object;
 @enduml
 async_mark
 </details>
-
-## Technical requirements
-
-* Unit tests
-* Integration tests - this means that whole application is running including in-memory DB
-
-### Bonus points
-
-* Domain Driven Design applied
-* Multi-module approach with [clean architecture](https://medium.freecodecamp.org/a-quick-introduction-to-clean-architecture-990c014448d2)
-* Generated API documentation
-* Automated DB migrations ([Liquibase](https://www.liquibase.org/) or [Flyway](https://flywaydb.org/))
-* Security layer with basic auth
-* Security layer with JWT
-* Building runnable fat-jar

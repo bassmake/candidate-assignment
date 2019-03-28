@@ -1,13 +1,13 @@
 @startuml
 
-title "Async processing"
+title Async processing
 
-participant "external producer" as ep
+actor "external producer" as ep
 participant "message broker" as mb
 participant "message consumer" as mc
 participant Service as s
 participant Repository as r
-participant DB as db
+database DB as db
 
 ep ->> mb: produce message
 mc ->> mb: consume message
