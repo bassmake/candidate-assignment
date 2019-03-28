@@ -57,7 +57,6 @@ monetary transactions.
 <summary></summary>
 rest_api_mark
 
-```
 @startuml
 
 title Rest API
@@ -78,7 +77,7 @@ s -> c: return data
 c -> u: HTTP response
 
 @enduml
-```
+
 rest_api_mark
 </details>
 
@@ -90,13 +89,12 @@ rest_api_mark
 <summary></summary>
 async_mark
 
-```
 @startuml
 
 title Async processing
 
 actor "external producer" as ep
-participant "message broker" as mb
+queue "message broker" as mb
 participant "message consumer" as mc
 participant Service as s
 participant Repository as r
@@ -111,6 +109,6 @@ db -> r: receive data, map to classes
 r -> s: return business object
 
 @enduml
-```
+
 async_mark
 </details>
