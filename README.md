@@ -83,18 +83,18 @@ rest_api_mark_1
 
 ### Asynchronous processing
 
-![Alt text](https://g.gravizo.com/source/async_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
+![Alt text](https://g.gravizo.com/source/async_mark_1?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
 
 <details>
 <summary></summary>
-async_mark
+async_mark_1
 
 @startuml;
 
 title Async processing;
 
 actor "external producer" as ep;
-queue "message broker" as mb;
+participant "message broker" as mb;
 participant "message consumer" as mc;
 participant Service as s;
 participant Repository as r;
@@ -110,5 +110,5 @@ r -> s: return business object;
 
 @enduml
 
-async_mark
+async_mark_1
 </details>

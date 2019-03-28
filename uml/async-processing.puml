@@ -3,7 +3,7 @@
 title Async processing
 
 actor "external producer" as ep
-queue "message broker" as mb
+participant "message broker" as mb
 participant "message consumer" as mc
 participant Service as s
 participant Repository as r
