@@ -83,9 +83,11 @@ rest_api_mark
 
 ![Alt text](https://g.gravizo.com/source/async_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbassmake%2Fcandidate-assignment%2Fmaster%2FREADME.md)
 
-<details> 
+<details>
 <summary></summary>
 async_mark
+
+```
 @startuml
 
 title Async processing
@@ -106,5 +108,6 @@ db -> r: receive data, map to classes
 r -> s: return business object
 
 @enduml
+```
 async_mark
 </details>
