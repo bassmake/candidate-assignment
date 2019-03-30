@@ -37,6 +37,7 @@ monetary transactions.
 * reasonable logging via SLF4J (used implementation is not important) 
 * Unit tests
 * Integration tests - this means that whole application is running including in-memory DB
+* Source code available publicly on some VCS (preferably with history)
 
 ### Bonus points
 
