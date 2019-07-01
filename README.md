@@ -39,12 +39,13 @@ monetary transactions.
 * Integration tests - this means that whole application is running including in-memory DB
 * Source code available publicly on some VCS (preferably with history)
 
-### Bonus points
+### Additional points
 
 * Domain Driven Design applied
 * Multi-module approach with [clean architecture](https://medium.freecodecamp.org/a-quick-introduction-to-clean-architecture-990c014448d2)
 * Generated API documentation
 * Automated DB migrations ([Liquibase](https://www.liquibase.org/) or [Flyway](https://flywaydb.org/))
+* API generated via OpenAPI (not just documented, generated)
 * Security layer with basic auth
 * Security layer with JWT
 * Building runnable fat-jar
